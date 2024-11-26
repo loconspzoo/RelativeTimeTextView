@@ -1,3 +1,3 @@
-public DateTextConfiguration(String now) {
+public class DateTextConfiguration(String now) {
     this.now = now;
 }

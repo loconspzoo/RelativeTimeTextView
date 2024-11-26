@@ -4,8 +4,8 @@ android {
     compileSdkVersion 25
     defaultConfig {
         minSdkVersion 8
-        versionCode 10400
-        versionName "1.5.1"
+        versionCode 10500
+        versionName "1.5.2"
         targetSdkVersion 25
 
     }

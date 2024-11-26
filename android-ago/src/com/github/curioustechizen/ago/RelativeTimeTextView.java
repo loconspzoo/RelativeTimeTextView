@@ -29,7 +29,7 @@ public class RelativeTimeTextView extends TextView {
     private String mSuffix;
     private Handler mHandler = new Handler();
     private UpdateTimeRunnable mUpdateTimeTask;
-    private DateTextConfiguration dateTextConfiguration;
+    private DateTextConfiguration mDateTextConfiguration;
     private boolean isUpdateTaskRunning = false;
 
     public RelativeTimeTextView(Context context, AttributeSet attrs) {
@@ -95,12 +95,8 @@ public class RelativeTimeTextView extends TextView {
         updateTextDisplay();
     }
 
-    public DateTextConfiguration getDateTextConfiguration() {
-        return dateTextConfiguration;
-    }
-
     public void setDateTextConfiguration(DateTextConfiguration pDateTextConfiguration) {
-        dateTextConfiguration = pDateTextConfiguration;
+        mDateTextConfiguration = pDateTextConfiguration;
     }
 
     /**
@@ -189,10 +185,10 @@ public class RelativeTimeTextView extends TextView {
     }
 
     private String getNowText() {
-        if (dateTextConfiguration == null) {
+        if (mDateTextConfiguration == null) {
             return getResources().getString(R.string.just_now);
         }
-        return dateTextConfiguration.getNow();
+        return mDateTextConfiguration.getNow();
     }
 
     @Override
